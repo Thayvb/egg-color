@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "629556831805",
+    "project_id": "tccegs",
+    "storage_bucket": "tccegs.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:629556831805:android:15c6e79109ed8ddb0f6c54",
+        "android_client_info": {
+          "package_name": "com.mycompany.newprojecttcccamera"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCh6cKrwirpWZ5SKG02yh6Nun0CgPzd2oM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
