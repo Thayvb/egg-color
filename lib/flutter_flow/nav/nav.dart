@@ -46,6 +46,16 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           name: 'Captura',
           path: '/captura',
           builder: (context, params) => const CapturaWidget(),
+        ),
+        FFRoute(
+          name: 'Ambiente',
+          path: '/ambiente',
+          builder: (context, params) => const AmbienteWidget(),
+        ),
+        FFRoute(
+          name: 'Dia',
+          path: '/dia',
+          builder: (context, params) => const DiaWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
     );

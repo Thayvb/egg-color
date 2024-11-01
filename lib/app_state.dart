@@ -58,6 +58,60 @@ class FFAppState extends ChangeNotifier {
   set ImagePath(String value) {
     _ImagePath = value;
   }
+
+  String _colorCondition = '';
+  String get colorCondition => _colorCondition;
+  set colorCondition(String value) {
+    _colorCondition = value;
+  }
+
+  double _blurredImageBytes = 0.0;
+  double get blurredImageBytes => _blurredImageBytes;
+  set blurredImageBytes(double value) {
+    _blurredImageBytes = value;
+  }
+
+  String _filteredImage = '';
+  String get filteredImage => _filteredImage;
+  set filteredImage(String value) {
+    _filteredImage = value;
+  }
+
+  int _totalRed = 0;
+  int get totalRed => _totalRed;
+  set totalRed(int value) {
+    _totalRed = value;
+  }
+
+  int _totalGreen = 0;
+  int get totalGreen => _totalGreen;
+  set totalGreen(int value) {
+    _totalGreen = value;
+  }
+
+  int _totalBlue = 0;
+  int get totalBlue => _totalBlue;
+  set totalBlue(int value) {
+    _totalBlue = value;
+  }
+
+  int _pixelCount = 0;
+  int get pixelCount => _pixelCount;
+  set pixelCount(int value) {
+    _pixelCount = value;
+  }
+
+  String _processedImageBytes = '';
+  String get processedImageBytes => _processedImageBytes;
+  set processedImageBytes(String value) {
+    _processedImageBytes = value;
+  }
+
+  String _processedImageBase64 = '';
+  String get processedImageBase64 => _processedImageBase64;
+  set processedImageBase64(String value) {
+    _processedImageBase64 = value;
+  }
 }
 
 void _safeInit(Function() initializeField) {

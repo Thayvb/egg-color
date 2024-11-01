@@ -21,6 +21,8 @@ class _HomePageWidgetState extends State<HomePageWidget> {
   void initState() {
     super.initState();
     _model = createModel(context, () => HomePageModel());
+
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override
@@ -51,6 +53,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                       width: 397.0,
                       height: 200.0,
                       fit: BoxFit.cover,
+                      alignment: const Alignment(0.0, 0.0),
                     ),
                   ),
                 ],
@@ -59,7 +62,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                 alignment: const AlignmentDirectional(-0.11, -0.1),
                 child: FFButtonWidget(
                   onPressed: () async {
-                    context.pushNamed('Captura');
+                    context.pushNamed('Ambiente');
                   },
                   text:
                       '                            Iniciar                            ',

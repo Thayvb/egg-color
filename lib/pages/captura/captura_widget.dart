@@ -25,6 +25,8 @@ class _CapturaWidgetState extends State<CapturaWidget> {
   void initState() {
     super.initState();
     _model = createModel(context, () => CapturaModel());
+
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override
@@ -109,7 +111,7 @@ class _CapturaWidgetState extends State<CapturaWidget> {
                     child: Container(
                       width: double.infinity,
                       decoration: BoxDecoration(
-                        color: FlutterFlowTheme.of(context).secondaryBackground,
+                        color: const Color(0xFFFFA301),
                         borderRadius: BorderRadius.circular(8.0),
                       ),
                       child: Padding(
@@ -122,7 +124,11 @@ class _CapturaWidgetState extends State<CapturaWidget> {
                                   0.0, 0.0, 0.0, 12.0),
                               child: FFButtonWidget(
                                 onPressed: () async {
-                                  await actions.handleImageSelection();
+                                  await actions.handleImageSelection(
+                                    context,
+                                  );
+
+                                  safeSetState(() {});
                                 },
                                 text: 'Upload',
                                 options: FFButtonOptions(
@@ -163,12 +169,15 @@ class _CapturaWidgetState extends State<CapturaWidget> {
                       fit: BoxFit.cover,
                     ),
                   ),
-                  Text(
-                    FFAppState().red.toString(),
-                    style: FlutterFlowTheme.of(context).bodyMedium.override(
-                          fontFamily: 'Inter',
-                          letterSpacing: 0.0,
-                        ),
+                  Align(
+                    alignment: const AlignmentDirectional(0.0, 0.0),
+                    child: Text(
+                      FFAppState().red.toString(),
+                      style: FlutterFlowTheme.of(context).bodyMedium.override(
+                            fontFamily: 'Inter',
+                            letterSpacing: 0.0,
+                          ),
+                    ),
                   ),
                   Text(
                     FFAppState().green.toString(),
@@ -179,6 +188,13 @@ class _CapturaWidgetState extends State<CapturaWidget> {
                   ),
                   Text(
                     FFAppState().blue.toString(),
+                    style: FlutterFlowTheme.of(context).bodyMedium.override(
+                          fontFamily: 'Inter',
+                          letterSpacing: 0.0,
+                        ),
+                  ),
+                  Text(
+                    FFAppState().colorCondition,
                     style: FlutterFlowTheme.of(context).bodyMedium.override(
                           fontFamily: 'Inter',
                           letterSpacing: 0.0,
